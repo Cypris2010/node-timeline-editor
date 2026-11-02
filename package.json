@@ -1,0 +1,14 @@
+{
+  "name": "led-timeline",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Mini-TouchDesigner mit Zeitleiste für WLED (DDP / Art-Net / sACN)",
+  "scripts": {
+    "start": "node server.js",
+    "fake-wled": "node tools/fake-wled.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}

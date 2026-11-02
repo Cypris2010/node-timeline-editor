@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LED Timeline</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><circle cx='4' cy='4' r='3' fill='%23ff2a6d'/><circle cx='12' cy='4' r='3' fill='%2300e5ff'/><circle cx='4' cy='12' r='3' fill='%23ffd23f'/><circle cx='12' cy='12' r='3' fill='%237c5cff'/></svg>">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="logo"></span>LED Timeline</div>
+    <input id="project-name" class="project-name" spellcheck="false" title="Projektname">
+    <div class="transport">
+      <button id="btn-start" class="btn" title="Zum Anfang (Pos1)">⏮</button>
+      <button id="btn-play" class="btn btn-play" title="Abspielen / Pause (Leertaste)">▶</button>
+      <button id="btn-loop" class="btn" title="Wiederholen">⟲</button>
+      <div class="clock"><span id="time">00:00.00</span><span id="beat"></span></div>
+    </div>
+    <div class="grow"></div>
+    <button id="btn-undo" class="btn" title="Rückgängig (⌘Z)">↶</button>
+    <button id="btn-redo" class="btn" title="Wiederholen (⇧⌘Z)">↷</button>
+    <button id="btn-save" class="btn" title="Auf Server speichern (⌘S)">Speichern</button>
+    <button id="out-pill" class="pill" title="Ausgabe"><span class="dot"></span><span class="txt">Verbinde …</span></button>
+  </header>
+
+  <main class="workspace">
+    <aside id="library" class="panel library"></aside>
+    <section class="stage">
+      <div class="stage-bar">
+        <span id="res" class="muted small"></span>
+        <span class="grow"></span>
+        <button id="preview-mode" class="btn btn-xs">● Punkte</button>
+      </div>
+      <div class="stage-view"><canvas id="preview"></canvas></div>
+    </section>
+    <aside class="panel side">
+      <nav class="tabs">
+        <button data-tab="clip" class="active">Clip</button>
+        <button data-tab="project">Projekt</button>
+        <button data-tab="output">Ausgabe</button>
+      </nav>
+      <div id="tab-clip" class="tab-panel"></div>
+      <div id="tab-project" class="tab-panel" hidden></div>
+      <div id="tab-output" class="tab-panel" hidden></div>
+    </aside>
+  </main>
+
+  <div id="splitter" class="splitter" title="Ziehen, um die Zeitleiste zu vergrößern"></div>
+  <section id="timeline" class="timeline"></section>
+  <div id="toasts" class="toasts"></div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
